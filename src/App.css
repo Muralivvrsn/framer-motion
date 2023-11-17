@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn{
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.one{
+  width: 319px;
+  height: 58px;
+  overflow: hidden;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 10;
+}
+.two{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  height: fit-content;
+  transform: translateY(-250px);
+  border: 1px solid black;
+  transition: all 10s ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+.level-show{
+  animation: levelDown 1s forwards;
+}
+.level-not-show{
+  animation: levelUp 1s forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@keyframes levelDown {
+  0%{
+    transform: translateY(-250px);
   }
-  to {
-    transform: rotate(360deg);
+  100%{
+    transform: translateY(0px);
+  }
+}
+@keyframes levelUp {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-250px);
+  }
+}
+.help{
+  height: 230px;
+  overflow: hidden;
+  margin-top: 100px;
+  border: 1px solid black;
+}
+
+.show{
+  animation: goDown 1s forwards;
+}
+
+.not-show{
+  animation:goUp 1s forwards
+}
+
+@keyframes goDown {
+  0%{
+    transform: translateY(-58px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+@keyframes goUp {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(-58px);
+  }
+}
+
+.submit-show{
+  animation: submitDown 1s forwards;
+}
+.submit-not-show{
+  animation: submitUp 1s forwards;
+}
+
+@keyframes submitDown {
+  0%{
+    transform: translateY(-170px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+@keyframes submitUp {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(-170px);
   }
 }
